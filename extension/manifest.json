@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "YT: Summae & Synopsis",
+    "version": "1.0",
+    "description": "Summarize YouTube videos using AI",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "http://localhost:5000/*",
+      "https://www.youtube.com/*"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }

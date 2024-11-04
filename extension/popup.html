@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">YT</div>
+      <h1>YT: Summae & Synopsis</h1>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path class="sun" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          <circle class="sun" cx="12" cy="12" r="5"></circle>
+          <path class="moon" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="url-container">
+      <div class="current-video">Currently watching</div>
+      <div class="video-title" id="videoTitle">No YouTube video detected</div>
+    </div>
+    
+    <button class="button" id="summarizeBtn">Generate Summary</button>
+    
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <div>Analyzing video content...</div>
+    </div>
+    
+    <div class="error" id="error"></div>
+    
+    <div class="summary-container" id="summaryContainer" style="display: none;">
+      <div class="summary-header">
+        <span class="summary-title">Video Summary</span>
+        <button id="copyBtn" class="copy-button">
+            <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" />
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+            </svg>
+            Copy
+        </button>
+      </div>
+      <div class="summary-text" id="summaryText">
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="success-toast" id="successToast">Copied to clipboard!</div>
+
+
+  <script src="popup.js"></script>
+</body>
+</html>
