@@ -1,4 +1,4 @@
-# YT-Summae-Synopsis
+# YT: Summae & Synopsis
 **Features**
 
 Automatic Video Transcript Fetching: The extension can automatically fetch the transcript for a YouTube video, even if the transcript is not provided by the video owner.<br>
