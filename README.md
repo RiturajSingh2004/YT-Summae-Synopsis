@@ -1,74 +1,130 @@
 # YT: Summae & Synopsis
-**Features**
 
-Automatic Video Transcript Fetching: The extension can automatically fetch the transcript for a YouTube video, even if the transcript is not provided by the video owner.<br>
-Summarization: The extension uses advanced natural language processing techniques to analyze the video transcript and generate a concise summary.<br>
-Responsive Design: The extension's user interface is designed to be mobile-friendly and accessible across different screen sizes.<br>
-Theming: The extension can automatically detect and match the theme (light or dark) of the YouTube website, providing a seamless user experience.<br>
-Copy to Clipboard: Users can easily copy the generated summary to their clipboard with a single click.
+<div align="center">
+  
+![YT: Summae & Synopsis Logo](https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo1.png)
 
-**Installation**
-To install the YouTube Video Summarization Chrome Extension, follow these steps:
+*Transform YouTube videos into concise, actionable summaries with just one click.*
 
-1.Download the latest release of the extension from the releases page.<br>
-2.Open the Google Chrome browser and navigate to chrome://extensions/.<br>
-3.Enable "Developer mode" by toggling the switch in the top-right corner of the page.<br>
-4.Click the "Load unpacked" button and select the directory where you downloaded the extension files.<br>
-5.The extension should now be installed and ready to use.
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
-**Requirements**
+</div>
 
-Flask==2.0.2 <br>
-Flask-CORS==3.0.10 <br>
-youtube-transcript-api==0.5.0 <br>
-transformers==4.18.0
+## 🌟 Overview
 
-**Usage**
+**YT: Summae & Synopsis** is a powerful Browser extension that leverages advanced AI to automatically summarize YouTube videos. Whether you're researching for a project, studying, or simply want to decide if a video is worth your time, this extension provides instant, high-quality video summaries with minimal effort.
 
-Navigate to a YouTube video you would like to summarize.
-Click on the extension icon in the Chrome toolbar to open the extension's popup window.
-The extension will automatically detect the current YouTube video and display its title.
-Click the "Generate Summary" button to initiate the summarization process.
-Once the summary is generated, it will be displayed in the popup window.
-You can copy the summary to your clipboard by clicking the "Copy" button.
+## ✨ Key Features
 
-**Technical Overview**
-**Architecture**
-The YouTube Video Summarization Chrome Extension is composed of two main components:
+- **Automatic Transcript Extraction**: Fetches video transcripts even when not provided by the video owner
+- **AI-Powered Summarization**: Uses state-of-the-art natural language processing to generate concise, meaningful summaries
+- **Seamless UI Integration**: Adopts YouTube's theme (light/dark mode) for a native experience
+- **Responsive Design**: Works beautifully across desktop and mobile devices
+- **One-Click Copy**: Easily copy summaries to your clipboard
+- **Structured Output**: Presents summaries in a readable format with key points highlighted
 
-Backend: A Flask-based Python server that provides the video summarization functionality.<br>
-Frontend: A Chrome extension built using HTML, CSS, and JavaScript that interacts with the backend server and provides the user interface.
+## 🚀 Installation
 
-**Backend**
-The backend server, implemented in the server.py file, is responsible for the following tasks:
+### Method 1: Chrome Web Store
+*(Coming soon)*
 
-1.Video Transcript Fetching: The server uses the YouTube Transcript API to retrieve the transcript for a given YouTube video.<br>
-2.Text Summarization: The server utilizes the Transformers library, specifically the BART model, to generate a summary of the video transcript.<br>
-3.API Endpoint: The server exposes a /api/summarize endpoint that accepts a YouTube video URL and returns the generated summary.
+### Method 2: Manual Installation
+1. Download the [latest release](https://github.com/RiturajSingh2004/YT-Summae-Synopsis) of the extension
+2. Open Chrome or any Browser and navigate to `chrome://extensions/`
+3. Enable "Developer mode" by toggling the switch in the top-right corner
+4. Click "Load unpacked" and select the downloaded extension directory
+5. The extension icon should now appear in your Chrome toolbar
 
-**Frontend**
-The frontend of the extension, implemented in the popup.html, popup.css, and popup.js files, is responsible for the following tasks:
+## 🛠️ Server Setup
 
-1.User Interface: The extension's popup window displays the current YouTube video's title and provides a button to generate the summary.<br>
-2.Theme Detection: The extension can automatically detect the theme (light or dark) of the YouTube website and apply the corresponding styles to the extension's UI.<br>
-3.Summary Display: The extension displays the generated summary in a formatted, easy-to-read layout, with the option to copy the summary to the clipboard.<br>
-4.Communication with Backend: The extension's JavaScript code handles the communication with the backend server, sending the video URL and displaying the received summary.
+The extension requires a backend server to perform the summarization:
 
-**Technologies Used**
-The YouTube Video Summarization Chrome Extension utilizes the following technologies:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/RiturajSingh2004/YT-Summae-Synopsis.git
+   cd YT-Summae-Synopsis
+   ```
 
-**Backend**:
+2. Install the required dependencies:
+   ```bash
+   pip install Flask==2.0.2 Flask-CORS==3.0.10 youtube-transcript-api==0.5.0 transformers==4.18.0
+   ```
 
-Python <br>
-Flask <br>
-Flask-CORS <br>
-YouTube Transcript API <br>
-Transformers library
+3. Start the server:
+   ```bash
+   python server.py
+   ```
 
+The server will run on `http://localhost:5000` by default.
 
-**Frontend**:
+## 📋 Usage
 
-HTML <br>
-CSS <br>
-JavaScript <br>
-Chrome Extensions API
+1. Navigate to any YouTube video you want to summarize
+2. Click the YT: Summae & Synopsis extension icon in your toolbar
+3. The extension will automatically detect the current video
+4. Click "Generate Summary" to begin the process
+5. View the formatted summary and copy it to your clipboard if needed
+
+## 🖥️ Technical Architecture
+
+### Backend (Python)
+
+The backend server uses:
+- **Flask**: Lightweight web framework for API endpoints
+- **YouTube Transcript API**: For extracting video transcripts
+- **Transformers Library**: Leveraging BART model for text summarization
+- **Flask-CORS**: Enabling cross-origin resource sharing
+
+### Frontend (JavaScript/HTML/CSS)
+
+The Chrome extension uses:
+- **Chrome Extensions API**: For interacting with the browser
+- **Vanilla JavaScript**: For core functionality
+- **Responsive CSS**: For adaptive layout and theming
+- **Theme Detection**: For automatically matching YouTube's light/dark theme
+
+## 🔄 Data Flow
+
+1. User clicks "Generate Summary" in the extension popup
+2. Extension captures the current YouTube video URL
+3. Request is sent to the Flask backend server
+4. Server extracts video transcript using YouTube Transcript API
+5. Transcript is processed and summarized using the BART model
+6. Summary is returned to the extension
+7. Extension formats and displays the summary to the user
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgements
+
+- Built with ❤️ by [RiturajSingh2004](https://github.com/RiturajSingh2004)
+- Thanks to the creators of the libraries and frameworks used in this project
+- Special thanks to the open-source community for their continuous support and inspiration
+
+## 🔮 Future Enhancements
+
+- Support for additional languages
+- Customizable summary length and format
+- YouTube playlist summarization
+- Offline mode support
+- Keyword extraction and highlighting
+- Export to PDF/Markdown options
+
+---
+
+<div align="center">
+  <p>If you find this project helpful, please consider giving it a star ⭐</p>
+  <p>For issues, suggestions, or questions, please open an <a href="https://github.com/RiturajSingh2004/YT-Summae-Synopsis/issues">issue</a>.</p>
+</div>
