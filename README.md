@@ -2,7 +2,7 @@
 
 <div align="center">
   
-![YT: Summae & Synopsis Logo](https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo1.png)
+![YT: Summae & Synopsis Logo](https://github.com/RiturajSingh2004/YT-Summae-Synopsis/blob/main/extension/icon128.png)
 
 *Transform YouTube videos into concise, actionable summaries with just one click.*
 
