@@ -12,6 +12,9 @@
 
 </div>
 
+## Paper Publish
+[YT: Summae & Synopsis on Ready Tensor](https://app.readytensor.ai/publications/qgV7x5cxobSX)
+
 ## 🌟 Overview
 
 **YT: Summae & Synopsis** is a powerful Browser extension that leverages advanced AI to automatically summarize YouTube videos. Whether you're researching for a project, studying, or simply want to decide if a video is worth your time, this extension provides instant, high-quality video summaries with minimal effort.
